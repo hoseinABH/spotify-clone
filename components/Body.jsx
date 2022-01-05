@@ -5,7 +5,7 @@ import Search from './Search';
 import { useSession } from 'next-auth/react';
 import Poster from './Poster';
 
-const Body = ({ spotifyApi }) => {
+const Body = ({ spotifyApi, selectTrack }) => {
   const { data: session } = useSession();
   const { accessToken } = session;
   const [search, setSearch] = useState('');
@@ -61,10 +61,6 @@ const Body = ({ spotifyApi }) => {
     });
   }, [accessToken, spotifyApi]);
 
-  const selectTrack = (id) => {
-    console.log(id);
-  };
-
   return (
     <section className="ml-24 py-4 space-y-8 md:max-w-6xl flex-grow md:mr-2.5">
       <Search search={search} setSearch={setSearch} />
@@ -75,8 +71,8 @@ const Body = ({ spotifyApi }) => {
               return (
                 <Poster
                   key={track.id}
-                  {...track}
-                  selectTrack={() => selectTrack(track.id)}
+                  track={track}
+                  selectTrack={selectTrack}
                 />
               );
             })
@@ -84,8 +80,8 @@ const Body = ({ spotifyApi }) => {
               return (
                 <Poster
                   key={track.id}
-                  {...track}
-                  selectTrack={() => selectTrack(track.id)}
+                  track={track}
+                  selectTrack={selectTrack}
                 />
               );
             })}

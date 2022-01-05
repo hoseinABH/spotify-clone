@@ -1,8 +1,22 @@
 import { BsFillPauseFill, BsFillPlayFill } from 'react-icons/bs';
+import { useRecoilState } from 'recoil';
+import { playingTrackState, playState } from '../atoms/playerAtom';
 
-const Poster = ({ albumUrl, title, artist, selectTrack }) => {
+const Poster = ({ track, selectTrack }) => {
+  const { albumUrl, uri, title, artist } = track;
+  const [play, setPlay] = useRecoilState(playState);
+  const [playingTrack, setPlayingTrack] = useRecoilState(playingTrackState);
+
+  const handlePlay = () => {
+    selectTrack(track);
+
+    if (uri === playingTrack.uri) {
+      setPlay(!play);
+    }
+  };
+
   return (
-    <div className="track-card" onClick={selectTrack}>
+    <div className="track-card" onClick={handlePlay}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={albumUrl}
@@ -11,7 +25,11 @@ const Poster = ({ albumUrl, title, artist, selectTrack }) => {
       />
       <div className="absolute bottom-10 inset-x-0 ml-4 flex items-center space-x-3.5">
         <div className="h-10 w-10 bg-[#15883e] rounded-full flex items-center justify-center group-hover:bg-[#1db954] flex-shrink-0">
-          <BsFillPlayFill className="text-white text-xl ml-[1px]" />
+          {uri === playingTrack.uri && play ? (
+            <BsFillPauseFill className="text-white text-xl" />
+          ) : (
+            <BsFillPlayFill className="text-white text-xl ml-[1px]" />
+          )}
         </div>
 
         <div className="text-[15px]">
