@@ -25,4 +25,8 @@
   .track-card {
     @apply w-[260px] h-[360px] text-white/80 rounded-[50px] overflow-hidden relative select-none cursor-pointer hover:scale-105 hover:text-white/100 transition duration-200 ease-out mx-auto;
   }
+
+  .genre {
+    @apply bg-[#101010] text-[#CECECE] border border-[#484848] rounded-xl py-2.5 px-3.5 text-[11px] font-bold cursor-default;
+  }
 }
