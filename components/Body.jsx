@@ -22,7 +22,7 @@ const Body = ({ spotifyApi, selectTrack }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [accessToken]);
 
-  // search results
+  // Search Results
   useEffect(() => {
     if (!accessToken) return;
     if (!search) {
@@ -45,7 +45,7 @@ const Body = ({ spotifyApi, selectTrack }) => {
     }
   }, [accessToken, search, spotifyApi]);
 
-  // new Release
+  // New Release
   useEffect(() => {
     if (!accessToken) return;
 
@@ -65,7 +65,7 @@ const Body = ({ spotifyApi, selectTrack }) => {
   }, [accessToken, spotifyApi]);
 
   return (
-    <section className="ml-24 py-4 space-y-8 md:max-w-6xl flex-grow md:mr-2.5">
+    <section className="ml-24 py-4  space-y-8 md:max-w-[6xl] flex-grow md:mr-2.5">
       <Search search={search} setSearch={setSearch} />
 
       <div className="grid overflow-y-scroll scrollbar-hide h-96 py-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 p-4">
