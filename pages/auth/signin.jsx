@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import Spinner from '../../components/Spinner';
 
 // nextAuth
-import { getProviders, useSession } from 'next-auth/react';
+import { getProviders, signIn, signOut, useSession } from 'next-auth/react';
 
 const Signin = ({ providers }) => {
   const { data: session } = useSession();
@@ -41,7 +41,9 @@ const Signin = ({ providers }) => {
 
       {Object.values(providers).map((provider) => (
         <div key={provider.id}>
-          <button className="spotify-btn">Sign in with {provider.name}</button>
+          <button className="spotify-btn" onClick={() => signIn(provider.id)}>
+            Sign in with {provider.name}
+          </button>
         </div>
       ))}
     </div>
