@@ -1,4 +1,6 @@
 import Image from 'next/image';
+
+// icons
 import {
   ChartBarIcon,
   ClockIcon,
@@ -9,9 +11,6 @@ import {
 } from '@heroicons/react/solid';
 
 const Sidebar = () => {
-  const clickHandler = () => {
-    console.log('read');
-  };
   return (
     <section className="fixed top-0 z-40 flex flex-col p-4 items-center bg-black h-screen w-[90px] space-y-8">
       <Image
