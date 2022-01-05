@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-body bg-black text-white;
+    @apply font-body bg-black text-white scrollbar-hide;
   }
 }
 
@@ -16,6 +16,6 @@
   }
 
   .tag {
-    @apply py-1.5 px-3 text-[#cecece] rounded-xl text-sm font-bold border-2 border-[#484848];
+    @apply py-1.5 px-3 text-[#cecece] bg-[#282828] rounded-xl text-sm font-bold border-2 border-[#484848];
   }
 }
