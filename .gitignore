@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+# git hooks
+/.husky
+
 # production
 /build
 
