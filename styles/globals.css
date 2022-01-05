@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,100;1,500&display=swap');
 
 @layer base {
   body {
@@ -17,5 +17,9 @@
 
   .tag {
     @apply py-1.5 px-3 text-[#cecece] bg-[#282828] rounded-xl text-sm font-bold border-2 border-[#484848];
+  }
+
+  .spotify-btn {
+    @apply text-white py-4 px-6 rounded-full bg-[#1db954] transition duration-300 ease-out border border-transparent uppercase font-bold tracking-wider hover:scale-105 hover:bg-[#0db146];
   }
 }
