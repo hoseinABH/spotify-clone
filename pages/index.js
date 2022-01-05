@@ -18,6 +18,9 @@ export default function Home() {
   });
 
   if (status === 'loading') return <Spinner />;
+
+  // Deployed :)
+
   return (
     <div className="">
       <Head>
